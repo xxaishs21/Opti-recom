@@ -25,13 +25,8 @@ def solo_likes (user1 : list):
     Returns:
         list: liste des centre d'intérets contenant 0 ou 1.
     """
-    for i in range (11) :
-        n = random.randint(0, 1)
-        if n == 1:
-            user1[i] = 1
-        else:
-            user1[i] = 0
-
+    for i in range (len(user1)) :
+        user1[i] = random.randint(0, 1)
     return user1
 
 #user1 = [0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0]
@@ -90,7 +85,7 @@ def reco_interests_gno(G, seuil=0.65, d=12):
     Returns: 
         Networkx graph : graphe modifié après avoir appliqué la recommandation par intérets.  
     """
-    G2 = deepcopy(G)
+    G2 = G.copy()
     vecteurs = {}  # dictionnaire : noeud -> vecteur d'intérêt
 
     for node in G2.nodes:
@@ -121,7 +116,7 @@ def reco_interests_go(G, seuil=0.65, d=12):
     Returns: 
         Networkx graph : graphe modifié après avoir appliqué la recommandation par intérets.  
     """
-    G2 = deepcopy(G)
+    G2 = G.copy()
     vecteurs = {}  # dictionnaire : noeud -> vecteur d'intérêt
 
     for node in G2.nodes:
@@ -132,20 +127,16 @@ def reco_interests_go(G, seuil=0.65, d=12):
     for i in range(len(nodes)):
         for j in range(i + 1, len(nodes)):
             u, v = nodes[i], nodes[j]
-            
-            ensU = set(G2.edges(u))
-            
-            if not v in ensU :
+
+            if not G2.has_edge(u, v) :
                 sim = cosine_similarity(vecteurs[u], vecteurs[v])
                 if sim >= seuil:
                     G2.add_edge(u, v)
-                    G2.add_edge(v, u)
 
     return G2
 
 
-#G0 = nx.random_partition_graph([3]*3, 0.3, 0.25)
-#print(reco_interests_go(G0))
+
 
 
 
