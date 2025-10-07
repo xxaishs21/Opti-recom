@@ -6,7 +6,7 @@ def reco_link_gno(G, seuil=1):
     Recommande des liens à partir des amis communs.
     Si deux nœuds ont au moins `seuil` amis communs, on ajoute une arête entre eux.
     """
-    G2 = deepcopy(G)  #on travaille sur une copie pour comparer visuellement avant et apres
+    G2 = G.copy()  #on travaille sur une copie pour comparer visuellement avant et apres
     nodes = list(G.nodes)
 
     for i in range(len(nodes)):
@@ -19,7 +19,7 @@ def reco_link_gno(G, seuil=1):
                 amis_communs = amis_u & amis_v
 
                 if len(amis_communs) >= seuil:
-                    G2.add_edge([u], [v])
+                    G2.add_edge(u, v)
 
     return G2
 
@@ -30,7 +30,7 @@ def reco_link_go(G, seuil=1):
     Recommande des liens à partir des amis communs.
     Si deux nœuds ont au moins `seuil` amis communs, on ajoute une arête entre eux.
     """
-    G2 = deepcopy(G)  #on travaille sur une copie pour comparer visuellement avant et apres
+    G2 = G.copy()  #on travaille sur une copie pour comparer visuellement avant et apres
     nodes = list(G.nodes)
 
     for i in range(len(nodes)):
