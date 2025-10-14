@@ -39,10 +39,10 @@ def moyenne_sur_essais(N=30, n=50, k=3, p=0.05):
 
         stats_initial.append(get_metrics(G0))
 
-        G1 = reco_link(deepcopy(G0))
+        G1 = reco_link_gno(deepcopy(G0))
         stats_liens.append(get_metrics(G1))
 
-        G2 = reco_interets(deepcopy(G0))
+        G2 = reco_interests_gno(deepcopy(G0))
         stats_interets.append(get_metrics(G2))
 
 
@@ -81,8 +81,8 @@ G0 = nx.random_partition_graph([10]*5, 0.3, 0.001)
 print(G0)# 5 composantes, peu connectées
 
 # Applique les deux stratégies
-G1 = reco_link(G0, seuil=2)
-G2 = reco_interests(G0)
+G1 = reco_link_gno(deepcopy(G0))
+G2 = reco_interests_gno(deepcopy(G0))
 
 # Calcule une position fixe plus compacte
 pos = nx.spring_layout(G0, seed=42, k=0.3)  # k plus petit = nœuds plus proches
