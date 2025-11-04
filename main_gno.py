@@ -17,12 +17,13 @@ print_metrics("Graphe initial", init)
 print_metrics("Recommandation par liens", liens)
 print_metrics("Recommandation par interets", interets)
 
-# Génère le graphe de base
-G0 = nx.random_partition_graph([10]*5, 0.3, 0.001)
+# Génère le graphe de base (non orienté), puis on le rend orienté
+G0_undirected = nx.random_partition_graph([10]*5, 0.3, 0.001)
+G0 = nx.DiGraph(G0_undirected)   # <-- graphe orienté
 
-# Applique les deux stratégies
-G_liens = reco_link_gno(G0)                 
-G_inter = reco_interests_gno(G0)  
+# Applique les deux stratégies (elles fonctionnent aussi sur un DiGraph)
+G_liens = reco_link_gno(G0)
+G_inter = reco_interests_gno(G0)
 
 # Calcule une position fixe plus compacte
 pos = nx.spring_layout(G0, seed=42, k=0.3)  # k plus petit = nœuds plus proches
@@ -30,14 +31,28 @@ pos = nx.spring_layout(G0, seed=42, k=0.3)  # k plus petit = nœuds plus proches
 # Prépare l'affichage
 fig, axes = plt.subplots(1, 3, figsize=(15, 5))
 graphs = [G0, G_liens, G_inter]
-titles = ['Graphe initial', 'Recommandation par liens', 'Recommandation par intérêts']
+titles = ['Graphe initial (orienté)', 'Après reco par liens', 'Après reco par intérêts']
 colors = ['skyblue', 'limegreen', 'orange']
 
 for i in range(3):
     ax = axes[i]
     G = graphs[i]
     nx.draw_networkx_nodes(G, pos, ax=ax, node_color=colors[i], node_size=300)
-    nx.draw_networkx_edges(G, pos, ax=ax, edge_color=colors[i], width=0.8)
+
+    # --- ICI : on affiche des flèches ---
+    nx.draw_networkx_edges(
+        G,
+        pos,
+        ax=ax,
+        edge_color=colors[i],
+        width=0.8,
+        arrows=True,
+        arrowstyle='-|>',       # forme de la flèche
+        arrowsize=12,           # taille de la flèche
+        connectionstyle='arc3,rad=0.05'  # léger arrondi pour mieux voir les arcs
+    )
+    # ------------------------------------
+
     nx.draw_networkx_labels(G, pos, ax=ax, font_size=7)
     ax.set_title(titles[i])
     ax.axis('off')
