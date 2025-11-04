@@ -22,7 +22,7 @@ def dfs(G, path, visited_nodes):
             
             if neighbor in path:
                 
-                if len(path) < 2 or neighbor != path[-2]: #vérifie que c'est pas une arete 
+                if len(path) < 2 or neighbor != path[-2]: #vérifie que ce n'est pas une arete 
                     idx = path.index(neighbor)
                     cycle = path[idx:] #prend la liste des noeuds en enlevant le doublon
                     

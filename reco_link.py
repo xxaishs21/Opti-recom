@@ -2,9 +2,13 @@ from copy import deepcopy
 import networkx as nx
 
 def reco_link_gno(G, seuil=1):
-    """
-    Recommande des liens à partir des amis communs.
-    Si deux nœuds ont au moins `seuil` amis communs, on ajoute une arête entre eux.
+    """Recommande des liens dans un graphe non orienté à partir des amis communs.
+    Args:
+        G (networkx.Graph): Graphe non orienté représentant le réseau social.
+        seuil (int): Nombre minimal d'amis communs requis pour ajouter une arête entre deux nœuds.
+    Returns:
+        networkx.Graph: Copie de G dans laquelle on a ajouté des arêtes entre les paires de nœuds
+        ayant au moins `seuil` amis communs.
     """
     G2 = G.copy()  #on travaille sur une copie pour comparer visuellement avant et apres
     nodes = list(G.nodes)
@@ -26,9 +30,13 @@ def reco_link_gno(G, seuil=1):
 #____________________________________________________________________________________________________________________
 
 def reco_link_go(G, seuil=1):
-    """
-    Recommande des liens à partir des amis communs.
-    Si deux nœuds ont au moins `seuil` amis communs, on ajoute une arête entre eux.
+    """Recommande des liens dans un graphe orienté à partir des amis communs.
+    Args:
+        G (networkx.DiGraph): Graphe orienté représentant le réseau social.
+        seuil (int): Nombre minimal d'amis communs requis pour ajouter une arête entre deux nœuds.
+    Returns:
+        networkx.DiGraph: Copie de G dans laquelle on a ajouté des arcs (u, v) et (v, u)
+        entre les paires de nœuds ayant au moins `seuil` amis communs.
     """
     G2 = G.copy()  #on travaille sur une copie pour comparer visuellement avant et apres
     nodes = list(G.nodes)

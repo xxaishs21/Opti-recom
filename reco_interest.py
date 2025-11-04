@@ -2,7 +2,7 @@ import random
 import math
 from copy import deepcopy
 import networkx as nx
-from find_cycle_go import cycle_list
+from find_cycle import cycle_list_go
 
 center_interest = {0 : 'dessin',
                     1 : 'musique',
@@ -81,6 +81,7 @@ def can_reco(user1, user2) :
     else : 
         return False 
 
+# ------------------- POUR UN GRAPHE NON ORIENTE -------------------
 
 def reco_interests_gno(G, seuil=0.65, d=12):
     """
@@ -111,7 +112,7 @@ def reco_interests_gno(G, seuil=0.65, d=12):
 
     return G2
 
-#_____________________________________________________________________________________________________________________
+# ------------------- POUR UN GRAPHE ORIENTE -------------------
 
 def reco_interests_go(G, seuil=0.65, d=12):
     """

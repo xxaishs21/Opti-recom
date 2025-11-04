@@ -4,7 +4,7 @@ import networkx.algorithms.community as nx_comm
 import copy 
 
 from reco_link import reco_link_go
-from find_cycle_go import cycle_list
+from find_cycle import cycle_list_go
 from reco_interest import reco_interests_go
 
 #________________________________________________________________________________________________________________
