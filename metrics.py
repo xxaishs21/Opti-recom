@@ -14,24 +14,19 @@ def modularity(G):
     communities = list(nx_comm.greedy_modularity_communities(G))
     return nx_comm.modularity(G, communities)
 
-#Calculer les métriques gno
+#Calculer le nombre de composantes connexes
 def get_metrics(G):
     if G.is_directed():
         nb_comp = nx.number_weakly_connected_components(G)
     else:
         nb_comp = nx.number_connected_components(G)
 
-    #nb_cycles = G.number_of_edges() - G.number_of_nodes() + nb_comp
-
     return {
         "edges": G.number_of_edges(),
-        #"cycles": max(nb_cycles, 0),  # pour éviter les valeurs négatives
         "clustering": nx.average_clustering(G),
         "components": nb_comp,
         "modularity": modularity(G)
     }
-
-
 
 # Fonction principale : moyenne des métriques sur plusieurs essais
 def moyenne_sur_essais(N=30, n=50, k=3, p=0.05):
@@ -52,7 +47,9 @@ def moyenne_sur_essais(N=30, n=50, k=3, p=0.05):
 
 
     def moyenne(stats):
-        return {k: np.mean([d[k] for d in stats]) for k in stats[0]}
+        return {k: np.mean([d[k] for d in stats]) for k in stats[0]} #pour chaque clé k du premier dictionnaire, 
+                                                                    #on prend toutes les valeurs associées à la clé k
+                                                                    #et on renvoie leur moyenne 
 
     return (
         moyenne(stats_initial),

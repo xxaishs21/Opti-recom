@@ -10,8 +10,9 @@ import networkx.algorithms.community as nx_comm #fct de détection de communaut�
 from find_cycle_gno import cycle_list
 from reco_interest import reco_interests_gno
 from reco_link import reco_link_gno
+from metrics import modularity, get_metrics, moyenne_sur_essais, print_metrics
 
-
+"""
 #Calculer la modularité
 def modularity(G):
     communities = list(nx_comm.greedy_modularity_communities(G))
@@ -62,23 +63,19 @@ def print_metrics(title, stats, color="🔵"):
     print(f"   ↪ Composantes connexes    : {stats['components']:.1f}")
     print(f"   ↪ Modularity              : {stats['modularity']:.3f}")
     print()
-
+"""
 
 
 N = 30
 init, liens, interets = moyenne_sur_essais(N)
 
-"""
-print(f"\n 📊 Moyenne sur {N} essais")
-print_metrics("Graphe initial", init, "🔵")
-print_metrics("Recommandation par liens", liens, "🟢")
-print_metrics("Recommandation par intérêts", interets, "🟠")
-"""
-
+print(f"\n Moyenne sur {N} essais")
+print_metrics("Graphe initial", init)
+print_metrics("Recommandation par liens", liens)
+print_metrics("Recommandation par interets", interets)
 
 # Génère le graphe de base
 G0 = nx.random_partition_graph([10]*5, 0.3, 0.001)
-print(G0)# 5 composantes, peu connectées
 
 # Applique les deux stratégies
 G1 = reco_link_gno(deepcopy(G0))

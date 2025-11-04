@@ -53,15 +53,22 @@ def interest(user1 : list, user2 : list):
         if user1[i] == user2[i] : 
             inter_list[i] = 1
     return inter_list
-  
-
-def dot_product(a, b):
-    return sum(x * y for x, y in zip(a, b))
-
-def norm(v):
-    return math.sqrt(sum(x * x for x in v))
 
 def cosine_similarity(a, b):
+    """Calcule la similarité cosinus entre deux vecteurs numériques.
+    Args:
+        a (list[float]): Premier vecteur, représenté par une liste (ou séquence) de nombres.
+        b (list[float]): Deuxième vecteur, représenté par une liste (ou séquence) de nombres.
+    Returns:
+        float: Similarité cosinus entre a et b, égale à 0.0 si l’un des deux vecteurs est nul.
+    """
+
+    def dot_product(a, b):
+        return sum(x * y for x, y in zip(a, b))
+
+    def norm(v):
+        return math.sqrt(sum(x * x for x in v))
+    
     na = norm(a)
     nb = norm(b)
     if na == 0 or nb == 0:

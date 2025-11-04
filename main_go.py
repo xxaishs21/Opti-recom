@@ -13,23 +13,21 @@ from metrics import modularity, get_metrics, moyenne_sur_essais, print_metrics
 N = 30
 init, liens, interets = moyenne_sur_essais(N)
 
-# 1) Graphe de base non orienté 
+# énère le graphe de base
 G0 = nx.planted_partition_graph(3, 10, 0.3, 0.25, seed=42, directed=True)
 
-# 2) Recommandations orientées avec seuils réajustés
+# Applique les deux stratégies
 G_liens = reco_link_go(G0, seuil=3)                 
-G_inter = reco_interests_go(G0, seuil=0.35, d=12)   # plus permissif pour des vecteurs 0/1 aléatoires
-
+G_inter = reco_interests_go(G0, seuil=0.35, d=12)   
 
 print(f"\n Moyenne sur {N} essais")
 print_metrics("Graphe initial", init)
 print_metrics("Recommandation par liens", liens)
 print_metrics("Recommandation par interets", interets)
 
-# 3) Mise en page partagée
 pos = nx.spring_layout(G0, seed=42, k=0.3)
 
-# 4) Affichage
+# Affichage
 fig, axes = plt.subplots(1, 3, figsize=(15, 5))
 graphs = [G0, G_liens, G_inter]
 titles = ["Graphe initial (orienté)", "Après reco par liens", "Après reco par intérêts"]
