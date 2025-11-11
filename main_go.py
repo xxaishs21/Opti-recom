@@ -14,10 +14,10 @@ N = 30
 init, liens, interets = moyenne_sur_essais(N)
 
 # énère le graphe de base
-G0 = nx.planted_partition_graph(3, 10, 0.3, 0.25, seed=42, directed=True)
+G0 = nx.planted_partition_graph(2, 7, 0.1, 0.05, seed=42, directed=True)
 
 # Applique les deux stratégies
-G_liens = reco_link_go(G0, seuil=3)                 
+G_liens = reco_link_go(G0, seuil=4)                 
 G_inter = reco_interests_go(G0, seuil=0.35, d=12)   
 
 print(f"\n Moyenne sur {N} essais")
@@ -33,11 +33,28 @@ graphs = [G0, G_liens, G_inter]
 titles = ["Graphe initial (orienté)", "Après reco par liens", "Après reco par intérêts"]
 colors = ["skyblue", "limegreen", "orange"]
 
-for ax, G, title, color in zip(axes, graphs, titles, colors):
-    nx.draw_networkx_nodes(G, pos, ax=ax, node_color=color, node_size=250)
-    nx.draw_networkx_edges(G, pos, ax=ax, edge_color=color, width=0.9, alpha=0.9, arrows=False)
-    ax.set_title(title)
-    ax.axis("off")
+for i in range(3):
+    ax = axes[i]
+    G = graphs[i]
+    nx.draw_networkx_nodes(G, pos, ax=ax, node_color=colors[i], node_size=300)
+
+    # --- ICI : on affiche des flèches ---
+    nx.draw_networkx_edges(
+        G,
+        pos,
+        ax=ax,
+        edge_color=colors[i],
+        width=0.8,
+        arrows=True,
+        arrowstyle='-|>',       # forme de la flèche
+        arrowsize=12,           # taille de la flèche
+        connectionstyle='arc3,rad=0.05'  # léger arrondi pour mieux voir les arcs
+    )
+    # ------------------------------------
+
+    nx.draw_networkx_labels(G, pos, ax=ax, font_size=7)
+    ax.set_title(titles[i])
+    ax.axis('off')
 
 plt.tight_layout()
 plt.show()

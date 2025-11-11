@@ -8,10 +8,8 @@ Ce script génère un graphe aléatoire et l'affiche.
 
 def generate_random_graph(n=50, p=0.05):
     """Génère un graphe aléatoirede type voulu."""
-    
     G = nx.erdos_renyi_graph(n=n, p=p)
     return G
-
 
 def draw_graph(G):
     plt.figure(figsize=(8, 6))

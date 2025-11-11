@@ -2,12 +2,10 @@
 def dfs(G, path, visited_nodes):
     """
     Parcours en profondeur le graphe G.
-    
     Args : 
         G (_Networkx_) : graphe social où les sommets représentent les personnes
         path (_list_) : chemin parcouru (à mettre contenant uniquement le premier élément)
         visited_nodes (_set_) : noeuds visités dans le parcours (contenant initialement uniquement le premier élément) 
-    
     Returns : 
         _list_ : tous les cycles à partir du noeud donnée dans path
     """
@@ -17,7 +15,6 @@ def dfs(G, path, visited_nodes):
     
     for neighbor in G[node]:
         edge = (node, neighbor)
-        
         if edge in visited_edges:
             
             if neighbor in path:
@@ -42,10 +39,8 @@ def dfs(G, path, visited_nodes):
 def cycle_list(G):
     """
     Liste tous les cycles dans le graphe donné en paramètres.
-
     Args:
         G (_Networkx_): graphe social où les sommets représentent les personnes
-
     Returns:
         _type_: liste de tous les cycles présent dans le graphe à partir de n'importe quel noeud.
     """
