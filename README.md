@@ -30,9 +30,9 @@ Le calcul du coefficient de clustering, qui essentiel pour quantifier la densit�
 Pour la partie implémentation, la documentation officielle de networkx [4] a été utilisée pour générer, manipuler et afficher les graphes, explorer les communautés, mesurer la modularité et coder les stratégies de recommandation.
 Une chaîne YouTube [5] a permis de mieux appréhender certains concepts d’informatique théorique, en apportant un appui pédagogique grâce à des visualisations clairesdurant les phases exploratoires du projet.
 
-  [1] Programme officiel d’informatique de MP2I/MPI : https://cache.media.education.gouv.fr/file/SPE1-MEN-MESRI-4-2-2021/64/6/spe777_annexe_1373646.pdf
-  [2] GeeksForGeeks, *Clustering Coefficient in Graph Theory* : https://www.geeksforgeeks.org/clustering-coefficient-graph-theory/
-  [3] GeeksForGeeks, *Partitionnement et analyse de graphes* : https://www.insee.fr/fr/statistiques/fichier/3635442/imet131-q-chapitre-13.pdf
-  [4] NetworkX, *Documentation officielle* : https://networkx.org/documentation/stable/
-  [5] Chaine YouTube *Informatique Théorique* : http://www.youtube.com/@informatiquetheorique9146
+- [1] Programme officiel d’informatique de MP2I/MPI : https://cache.media.education.gouv.fr/file/SPE1-MEN-MESRI-4-2-2021/64/6/spe777_annexe_1373646.pdf
+- [2] GeeksForGeeks, *Clustering Coefficient in Graph Theory* : https://www.geeksforgeeks.org/clustering-coefficient-graph-theory/
+- [3] GeeksForGeeks, *Partitionnement et analyse de graphes* : https://www.insee.fr/fr/statistiques/fichier/3635442/imet131-q-chapitre-13.pdf
+- [4] NetworkX, *Documentation officielle* : https://networkx.org/documentation/stable/
+- [5] Chaine YouTube *Informatique Théorique* : http://www.youtube.com/@informatiquetheorique9146
 
