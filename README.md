@@ -6,7 +6,7 @@ Read this document in [english](README_en.md) -> il faut le faire
 Les réseaux sociaux sont omniprésents dans notre quotidien. Leur modélisation sous forme de graphes permet d’analyser des phénomènes complexes, parfois problématiques, tels que la formation de communautés fermées ou la diffusion biaisée de l’information.
 Ce projet explore la manière dont une stratégie de recommandation peut influencer la structure du réseau : soit en favorisant des cycles fermés, créant ainsi des chambres d’écho, soit au contraire en élargissant les connexions en privilégiant les liens vers l’extérieur. L’objectif est d’implémenter, de comparer et d'analyser différentes stratégies sur un graphe social artificiel.
 
-*Ce projet fait l'object d'un travail individuel*
+**Ce projet fait l'object d'un travail individuel**
 
 ## Problématique retenue
 
@@ -29,4 +29,10 @@ Les notions fondamentales telles que les cycles, les composantes connexes ou les
 Le calcul du coefficient de clustering, qui essentiel pour quantifier la densité locale dans un réseau, ainsi que la recherche des différentes métriques pouvant être utilisées pour l’analyse du graphe, s’appuient sur les explications détaillées proposées par GeeksForGeeks [2] et l’Insee [3], qui combinent une approche conceptuelle et une mise en œuvre algorithmique.
 Pour la partie implémentation, la documentation officielle de networkx [4] a été utilisée pour générer, manipuler et afficher les graphes, explorer les communautés, mesurer la modularité et coder les stratégies de recommandation.
 Une chaîne YouTube [5] a permis de mieux appréhender certains concepts d’informatique théorique, en apportant un appui pédagogique grâce à des visualisations clairesdurant les phases exploratoires du projet.
+
+[1] Programme officiel d’informatique de MP2I/MPI : https://cache.media.education.gouv.fr/file/SPE1-MEN-MESRI-4-2-2021/64/6/spe777_annexe_1373646.pdf
+[2] GeeksForGeeks, *Clustering Coefficient in Graph Theory* : https://www.geeksforgeeks.org/clustering-coefficient-graph-theory/
+[3] GeeksForGeeks, *Partitionnement et analyse de graphes* : https://www.insee.fr/fr/statistiques/fichier/3635442/imet131-q-chapitre-13.pdf
+[4] NetworkX, *Documentation officielle* : https://networkx.org/documentation/stable/
+[5] Chaine YouTube *Informatique Théorique* : http://www.youtube.com/@informatiquetheorique9146
 
