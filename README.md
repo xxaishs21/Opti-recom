@@ -34,5 +34,5 @@ Une chaîne YouTube [5] a permis de mieux appréhender certains concepts d’inf
 - [2] GeeksForGeeks, *Clustering Coefficient in Graph Theory* : https://www.geeksforgeeks.org/clustering-coefficient-graph-theory/
 - [3] GeeksForGeeks, *Partitionnement et analyse de graphes* : https://www.insee.fr/fr/statistiques/fichier/3635442/imet131-q-chapitre-13.pdf
 - [4] NetworkX, *Documentation officielle* : https://networkx.org/documentation/stable/
-- [5] Chaine YouTube *Informatique Théorique* : http://www.youtube.com/@informatiquetheorique9146
+- [5] Chaine YouTube, *Informatique Théorique* : http://www.youtube.com/@informatiquetheorique9146
 
