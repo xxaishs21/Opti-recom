@@ -83,7 +83,7 @@ def can_reco(user1, user2) :
 
 # ------------------- POUR UN GRAPHE NON ORIENTE -------------------
 
-def reco_interests_gno(G, seuil=0.65, d=12):
+def reco_interests_gno(G, seuil=0.6, d=12):
     """
     Recommande des liens à partir de la similarité des intérêts entre utilisateurs.    
     Args: 
@@ -114,7 +114,7 @@ def reco_interests_gno(G, seuil=0.65, d=12):
 
 # ------------------- POUR UN GRAPHE ORIENTE -------------------
 
-def reco_interests_go(G, seuil=0.65, d=12):
+def reco_interests_go(G, seuil=0.6, d=12):
     """
     Recommande des liens à partir de la similarité des intérêts entre utilisateurs.    
     Args: 
@@ -136,7 +136,7 @@ def reco_interests_go(G, seuil=0.65, d=12):
         for j in range(i + 1, len(nodes)):
             u, v = nodes[i], nodes[j]
 
-            if not G2.has_edge(u, v) :
+            if not (G2.has_edge(u, v) or G2.has_edge(v, u)) :
                 sim = cosine_similarity(vecteurs[u], vecteurs[v])
                 if sim >= seuil:
                     G2.add_edge(u, v)
