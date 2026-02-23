@@ -46,18 +46,11 @@ De plus, les systèmes de recommandation sont étudiés dans des contextes appli
 Enfin, l’essai d’Arvind Narayanan propose une analyse plus globale du fonctionnement des algorithmes de recommandation sur les réseaux sociaux. Il met en évidence le fait que, même lorsque les règles algorithmiques sont simples, les effets observés à l’échelle du réseau sont complexes et difficiles à prévoir. Cette idée justifie l’utilisation de méthodes probabilistes et de simulations de type Monte Carlo, qui consistent à répéter plusieurs fois une expérience aléatoire afin d’en étudier le comportement moyen [7].
 
 
-- [1] M. E. J. NEWMAN : Networks: An Introduction : https://doi.org/10.1093/acprof:oso
-/9780199206650.001.0001
-- [2] S. FORTUNATO : Community detection in graphs : https://doi.org/10.48550/arXiv.
-0906.0612
-- [3] L. LÜ, T. ZHOU : Link prediction in complex networks: A survey : https://doi.org/10.1016
-/j.physa.2010.11.027
-- [4] INSEE : Partitionnement et analyse de graphes : https://www.insee.fr/fr/statistiques/fichier
-/3635442/imet131-q-chapitre-13.pdf
-- [5] NETWORKX : Documentation officielle : https://www.researchgate.net/publication
-/384790760_The_role_of_recommendation_algorithms_in_driving_the_development_of_ecommerce_platforms
-- [6] YIYANG PAN : The role of recommendation algorithms in driving the development of ecommerce platforms : https://www.researchgate.net/publication
-/384790760_The_role_of_recommendation_algorithms_in_driving_the_development_of_ecommerce_platforms
-- [7] ARVIND NARAYANAN : Understanding Social Media Recommendation Algorithms :
-https://academiccommons.columbia.edu/doi/10.7916/khdk-m460
+- [1] M. E. J. NEWMAN : Networks: An Introduction : https://doi.org/10.1093/acprof:oso/9780199206650.001.0001
+- [2] S. FORTUNATO : Community detection in graphs : https://doi.org/10.48550/arXiv.0906.0612
+- [3] L. LÜ, T. ZHOU : Link prediction in complex networks: A survey : https://doi.org/10.1016/j.physa.2010.11.027
+- [4] INSEE : Partitionnement et analyse de graphes : https://www.insee.fr/fr/statistiques/fichier/3635442/imet131-q-chapitre-13.pdf
+- [5] NETWORKX : Documentation officielle : https://www.researchgate.net/publication/384790760_The_role_of_recommendation_algorithms_in_driving_the_development_of_ecommerce_platforms
+- [6] YIYANG PAN : The role of recommendation algorithms in driving the development of ecommerce platforms : https://www.researchgate.net/publication/384790760_The_role_of_recommendation_algorithms_in_driving_the_development_of_ecommerce_platforms
+- [7] ARVIND NARAYANAN : Understanding Social Media Recommendation Algorithms : https://academiccommons.columbia.edu/doi/10.7916/khdk-m460
 
