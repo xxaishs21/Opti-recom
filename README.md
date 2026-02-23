@@ -1,4 +1,4 @@
-Read this document in [english](README_en.md) -> il faut le faire 
+Read this document in [english](README_en.md)
 
 # Projet : Optimisation de recommandation d'amis sur un réseau social
 
