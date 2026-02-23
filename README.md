@@ -50,7 +50,7 @@ Enfin, l’essai d’Arvind Narayanan propose une analyse plus globale du foncti
 - [2] S. FORTUNATO : Community detection in graphs : https://doi.org/10.48550/arXiv.0906.0612
 - [3] L. LÜ, T. ZHOU : Link prediction in complex networks: A survey : https://doi.org/10.1016/j.physa.2010.11.027
 - [4] INSEE : Partitionnement et analyse de graphes : https://www.insee.fr/fr/statistiques/fichier/3635442/imet131-q-chapitre-13.pdf
-- [5] NETWORKX : Documentation officielle : https://www.researchgate.net/publication/384790760_The_role_of_recommendation_algorithms_in_driving_the_development_of_ecommerce_platforms
+- [5] NETWORKX : Dcumentation officielle : https://networkx.org/documentation/stable/
 - [6] YIYANG PAN : The role of recommendation algorithms in driving the development of ecommerce platforms : https://www.researchgate.net/publication/384790760_The_role_of_recommendation_algorithms_in_driving_the_development_of_ecommerce_platforms
 - [7] ARVIND NARAYANAN : Understanding Social Media Recommendation Algorithms : https://academiccommons.columbia.edu/doi/10.7916/khdk-m460
 
